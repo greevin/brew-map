@@ -1,6 +1,8 @@
 <template>
   <div style="height: 100%; width: 100%">
+    <!-- mapa -->
     <GmapMap :center="mapCenter" :zoom="17" style="width: 100%; height: 100%">
+      <!-- popup -->
       <GmapInfoWindow
         :options="infoWindowOptions"
         :position="infoWindowPosition"
@@ -10,8 +12,10 @@
         <div class="info-window">
           <h6 class="mb-1">{{ activeBrew.name }}</h6>
           <p class="mb-1">{{ activeBrew.city }}, {{ activeBrew.state }}</p>
+          <router-link to="/info">More info</router-link>
         </div>
       </GmapInfoWindow>
+      <!-- marker -->
       <GmapMarker
         :clickable="true"
         :draggable="false"
@@ -27,8 +31,16 @@
 
 <script>
 import securityCamera from "../assets/security-camera.png";
+import { bus } from "../main";
 export default {
   props: ["brews"],
+  created() {
+    bus.$on("click-list-brew", (data) => {
+      this.brews[0].latitude = data[0];
+      this.brews[0].longitude = data[1];
+      this.infoWindowOpened = false;
+    });
+  },
   data() {
     return {
       infoWindowOptions: {

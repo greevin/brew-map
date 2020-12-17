@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <Brew />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Brew from "./components/Brew.vue";
-
 export default {
   name: "App",
-  components: {
-    Brew,
-  },
 };
 </script>
