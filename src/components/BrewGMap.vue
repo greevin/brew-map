@@ -18,6 +18,7 @@
         v-for="brew in brews"
         :key="brew.id"
         :position="getPosition(brew)"
+        :icon="markerOptions"
         @click="handleMarkerClicked(brew)"
       />
     </GmapMap>
@@ -25,6 +26,7 @@
 </template>
 
 <script>
+import securityCamera from "../assets/security-camera.png";
 export default {
   props: ["brews"],
   data() {
@@ -37,6 +39,10 @@ export default {
       },
       activeBrew: {},
       infoWindowOpened: false,
+      markerOptions: {
+        url: securityCamera,
+        scaledSize: { width: 28, height: 28 },
+      },
     };
   },
   methods: {
