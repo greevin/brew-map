@@ -5,11 +5,11 @@
         :options="infoWindowOptions"
         :position="infoWindowPosition"
         :opened="infoWindowOpened"
-        @closeclick="handleMarkerClicked"
+        @closeclick="handleInfoWindowClose"
       >
         <div class="info-window">
-          <h5>{{ activeBrew.name }}</h5>
-          <p>{{ activeBrew.city }}, {{ activeBrew.state }}</p>
+          <h6 class="mb-1">{{ activeBrew.name }}</h6>
+          <p class="mb-1">{{ activeBrew.city }}, {{ activeBrew.state }}</p>
         </div>
       </GmapInfoWindow>
       <GmapMarker

@@ -2,7 +2,6 @@
   <div class="row" style="margin-left: 0px; margin-right: 0px">
     <brew-list :brews="brews" />
     <div class="col-9 remove-padding">
-      <brew-map :brews="brews" style="display: none" />
       <brew-g-map :brews="brews" />
     </div>
   </div>
@@ -11,11 +10,10 @@
 <script>
 import axios from "axios";
 import BrewList from "./BrewList.vue";
-import BrewMap from "./BrewMap.vue";
 import BrewGMap from "./BrewGMap.vue";
 
 export default {
-  components: { BrewList, BrewMap, BrewGMap },
+  components: { BrewList, BrewGMap },
   name: "Brew",
   data() {
     return {
