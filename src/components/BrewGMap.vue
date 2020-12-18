@@ -46,14 +46,14 @@ export default {
       infoWindowOptions: {
         pixelOffset: {
           width: 0,
-          height: -35,
+          height: -55,
         },
       },
       activeBrew: {},
       infoWindowOpened: false,
       markerOptions: {
         url: securityCamera,
-        scaledSize: { width: 28, height: 28 },
+        scaledSize: { width: 50, height: 50 },
       },
     };
   },
