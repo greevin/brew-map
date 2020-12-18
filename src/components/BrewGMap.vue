@@ -12,7 +12,12 @@
         <div class="info-window">
           <h6 class="mb-1">{{ activeBrew.name }}</h6>
           <p class="mb-1">{{ activeBrew.city }}, {{ activeBrew.state }}</p>
-          <router-link to="/info">More info</router-link>
+          <a
+            href="http://localhost:8080/sub/office/synoptic/654"
+            target="_blank"
+            >More info</a
+          >
+          <!-- <router-link to="/info">More info</router-link> -->
         </div>
       </GmapInfoWindow>
       <!-- marker -->
@@ -31,9 +36,9 @@
 
 <script>
 import securityCamera from "../assets/security-camera.png";
+import { mapState } from "vuex";
 import { bus } from "../main";
 export default {
-  props: ["brews"],
   created() {
     bus.$on("click-list-brew", (data) => {
       this.brews[0].latitude = data[0];
@@ -74,6 +79,7 @@ export default {
     },
   },
   computed: {
+    ...mapState(["brews"]),
     mapCenter() {
       if (!this.brews.length) {
         return {
@@ -92,6 +98,9 @@ export default {
         lng: parseFloat(this.activeBrew.longitude),
       };
     },
+  },
+  mounted() {
+    this.$store.dispatch("getAllBreweries");
   },
 };
 </script>

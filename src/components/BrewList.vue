@@ -19,9 +19,15 @@
 
 <script>
 import { bus } from "../main";
+import { mapState } from "vuex";
+
 export default {
-  name: "BrewList",
-  props: ["brews"],
+  computed: {
+    ...mapState(["brews"]),
+  },
+  mounted() {
+    this.$store.dispatch("getAllBreweries");
+  },
   methods: {
     clickList(lat, lng) {
       bus.$emit("click-list-brew", [lat, lng]);
