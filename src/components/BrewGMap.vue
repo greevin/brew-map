@@ -37,15 +37,7 @@
 <script>
 import securityCamera from "../assets/security-camera.png";
 import { mapGetters, mapState } from "vuex";
-// import { bus } from "../main";
 export default {
-  // created() {
-  //   bus.$on("click-list-brew", (data) => {
-  //     this.brews[0].latitude = data[0];
-  //     this.brews[0].longitude = data[1];
-  //     this.infoWindowOpened = false;
-  //   });
-  // },
   data() {
     return {
       infoWindowOptions: {

@@ -9,8 +9,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     brews: [],
-    lat: '',
-    lng: ''
+    lat: 33.524521,
+    lng: -86.774322
   },
   mutations: {
     setBreweries(state, payload) {
@@ -33,17 +33,20 @@ export default new Vuex.Store({
     mapCenter: state => {
       if (!state.brews.length) {
         return {
-          lat: 10,
-          lng: 10,
+          lat: 33.524521,
+          lng: -86.774322,
         };
       }
       return {
-        lat: parseFloat(state.brews[0].latitude),
-        lng: parseFloat(state.brews[0].longitude),
+        lat: parseFloat(state.lat),
+        lng: parseFloat(state.lng),
       };
     },
     updateMaps: (state) => {
-      console.log(state.lat)
+      return {
+        lat: parseFloat(state.lat),
+        lng: parseFloat(state.lng)
+      }
     },
   }
 })
