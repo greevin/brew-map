@@ -37,6 +37,7 @@
         class="list-group-item list-group-item-action"
         :class="{ active: isActive }"
         @click="clickList(brew.latitude, brew.longitude, brew.id)"
+        v-if="brew.latitude || brew.longitude"
       >
         <div class="container">
           <div class="row">
@@ -86,8 +87,6 @@ export default {
       const city = this.brews.filter(
         (brew) => this.selectedState === brew.state
       );
-
-      // return city;
 
       if (this.selectedState === "All") {
         return this.brews;
