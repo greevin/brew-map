@@ -33,8 +33,8 @@ export default new Vuex.Store({
     mapCenter: state => {
       if (!state.brews.length) {
         return {
-          lat: 33.524521,
-          lng: -86.774322,
+          lat: parseFloat(state.lat),
+          lng: parseFloat(state.lng),
         };
       }
       return {

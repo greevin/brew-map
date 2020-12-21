@@ -1,29 +1,44 @@
 <template>
-  <div class="col-3 brew-list">
-    <h1 class="text-center text-info m-3">Breweries List</h1>
-    <ul class="list-group mb-3" v-for="brew in brews" :key="brew.id">
+  <div class="col-3 brew-list remove-padding">
+    <h3 class="text-center text-info m-3">Breweries List</h3>
+    <ul class="list-group" v-for="brew in brews" :key="brew.id">
       <a
         href="#"
         class="list-group-item list-group-item-action"
-        @click="clickList(brew.latitude, brew.longitude)"
+        :class="{ active: isActive }"
+        @click="clickList(brew.latitude, brew.longitude, brew.id)"
       >
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{ brew.name }}</h5>
+        <div class="container">
+          <div class="row">
+            <div class="col-10">
+              <h5 class="mb-1">{{ brew.name }}</h5>
+              <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
+              <p class="mb-1">{{ brew.street }}</p>
+            </div>
+            <div
+              class="col-2"
+              style="padding-left: 0px; padding-right: 0px; text-align: center"
+            >
+              <img
+                src="../assets/security-camera.png"
+                alt=""
+                height="40px"
+                width="40px"
+              />
+            </div>
+          </div>
         </div>
-        <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
-        <p class="mb-1">{{ brew.street }}</p>
       </a>
     </ul>
   </div>
 </template>
 
 <script>
-// import { bus } from "../main";
 import { mapMutations, mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["brews"]),
+    ...mapState(["brews", "isActive"]),
   },
   mounted() {
     this.$store.dispatch("getAllBreweries");
@@ -31,7 +46,6 @@ export default {
   methods: {
     ...mapMutations(["onClickList"]),
     clickList(lat, lng) {
-      // bus.$emit("click-list-brew", [lat, lng]);
       this.onClickList([lat, lng]);
     },
   },
@@ -42,5 +56,26 @@ export default {
 .brew-list {
   overflow-y: scroll;
   height: 100vh;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.remove-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.list-group {
+  border-radius: 0 !important;
+}
+
+.list-group-item {
+  border-width: 0 0 1px !important;
 }
 </style>
