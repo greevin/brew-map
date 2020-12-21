@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import { bus } from "../main";
-import { mapState } from "vuex";
+// import { bus } from "../main";
+import { mapMutations, mapState } from "vuex";
 
 export default {
   computed: {
@@ -29,8 +29,10 @@ export default {
     this.$store.dispatch("getAllBreweries");
   },
   methods: {
+    ...mapMutations(["onClickList"]),
     clickList(lat, lng) {
-      bus.$emit("click-list-brew", [lat, lng]);
+      // bus.$emit("click-list-brew", [lat, lng]);
+      this.onClickList([lat, lng]);
     },
   },
 };

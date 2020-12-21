@@ -36,16 +36,16 @@
 
 <script>
 import securityCamera from "../assets/security-camera.png";
-import { mapState } from "vuex";
-import { bus } from "../main";
+import { mapGetters, mapState } from "vuex";
+// import { bus } from "../main";
 export default {
-  created() {
-    bus.$on("click-list-brew", (data) => {
-      this.brews[0].latitude = data[0];
-      this.brews[0].longitude = data[1];
-      this.infoWindowOpened = false;
-    });
-  },
+  // created() {
+  //   bus.$on("click-list-brew", (data) => {
+  //     this.brews[0].latitude = data[0];
+  //     this.brews[0].longitude = data[1];
+  //     this.infoWindowOpened = false;
+  //   });
+  // },
   data() {
     return {
       infoWindowOptions: {
@@ -79,19 +79,8 @@ export default {
     },
   },
   computed: {
-    ...mapState(["brews"]),
-    mapCenter() {
-      if (!this.brews.length) {
-        return {
-          lat: 10,
-          lng: 10,
-        };
-      }
-      return {
-        lat: parseFloat(this.brews[0].latitude),
-        lng: parseFloat(this.brews[0].longitude),
-      };
-    },
+    ...mapState(["brews", "lat", "lng"]),
+    ...mapGetters(["mapCenter", "updateMaps"]),
     infoWindowPosition() {
       return {
         lat: parseFloat(this.activeBrew.latitude),
