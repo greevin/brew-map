@@ -3,7 +3,7 @@
     <h3 class="text-center text-info m-3">Breweries List</h3>
 
     <div class="form-group" style="padding-left: 15px; padding-right: 15px">
-      <label for="exampleFormControlSelect1">State</label>
+      <label>State</label>
       <select v-model="selectedState" class="form-control">
         <option value="All" selected>All State</option>
         <option v-for="state in uniqueStates" :value="state" :key="state.id">
@@ -13,21 +13,25 @@
     </div>
 
     <div class="form-group" style="padding-left: 15px; padding-right: 15px">
-      <label for="exampleFormControlSelect1">City</label>
+      <label>City</label>
       <select
         v-model="selectedCity"
         class="form-control"
         :disabled="selectedState === 'All'"
       >
         <option value="All" selected>All Cities</option>
-        <option v-for="city in filteredCities" :value="city" :key="city.id">
+        <option
+          v-for="city in filteredCities"
+          :value="city.city"
+          :key="city.id"
+        >
           {{ city.city }}
         </option>
       </select>
     </div>
 
     <hr />
-    <ul class="list-group" v-for="brew in brews" :key="brew.id">
+    <ul class="list-group" v-for="brew in filteredList" :key="brew.id">
       <a
         href="#"
         class="list-group-item list-group-item-action"
@@ -75,13 +79,30 @@ export default {
       const states = this.brews
         .map((item) => item.state)
         .filter((value, index, self) => self.indexOf(value) === index);
+
       return states;
     },
     filteredCities: function () {
       const city = this.brews.filter(
-        (city) => this.selectedState === city.state
+        (brew) => this.selectedState === brew.state
       );
-      return city;
+
+      // return city;
+
+      if (this.selectedState === "All") {
+        return this.brews;
+      } else {
+        return city;
+      }
+    },
+    filteredList: function () {
+      const city = this.brews.filter((brew) => this.selectedCity === brew.city);
+
+      if (this.selectedCity === "All") {
+        return this.filteredCities;
+      } else {
+        return city;
+      }
     },
   },
   mounted() {
