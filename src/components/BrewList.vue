@@ -1,7 +1,5 @@
 <template>
-  <div class="col-3 brew-list remove-padding">
-    <h3 class="text-center text-info m-3">Breweries List</h3>
-
+  <div class="brew-list">
     <div class="form-group" style="padding-left: 15px; padding-right: 15px">
       <label>State</label>
       <select v-model="selectedState" class="form-control">
@@ -30,37 +28,52 @@
       </select>
     </div>
 
+    <div class="form-group" style="padding-left: 15px; padding-right: 15px">
+      <label>Brewery Type</label>
+      <select v-model="breweryType" class="form-control">
+        <option value="All" selected>All Types</option>
+        <option
+          v-for="breweryType in uniqueTypes"
+          :value="breweryType.id"
+          :key="breweryType.id"
+        >
+          {{ breweryType }}
+        </option>
+      </select>
+    </div>
+
     <hr />
-    <ul class="list-group" v-for="brew in filteredList" :key="brew.id">
-      <a
+    <b-list-group>
+      <b-list-group-item
         href="#"
-        class="list-group-item list-group-item-action"
-        :class="{ active: isActive }"
+        class="flex-column align-items-start"
+        v-for="brew in filteredList"
+        :key="brew.id"
+        :class="{
+          'priority-normal': brew.brewery_type === 'contract',
+          'priority-low': brew.brewery_type === 'micro',
+          'priority-medium': brew.brewery_type === 'brewpub',
+          'priority-critical': brew.brewery_type === 'regional',
+          'priority-high': brew.brewery_type === 'planning',
+        }"
         @click="clickList(brew.latitude, brew.longitude, brew.id)"
-        v-if="brew.latitude || brew.longitude"
       >
-        <div class="container">
-          <div class="row">
-            <div class="col-10">
-              <h5 class="mb-1">{{ brew.name }}</h5>
-              <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
-              <p class="mb-1">{{ brew.street }}</p>
-            </div>
-            <div
-              class="col-2"
-              style="padding-left: 0px; padding-right: 0px; text-align: center"
-            >
-              <img
-                src="../assets/security-camera.png"
-                alt=""
-                height="40px"
-                width="40px"
-              />
-            </div>
-          </div>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">
+            <b>{{ brew.name }}</b>
+          </h5>
+          <img
+            src="../assets/security-camera.png"
+            alt=""
+            height="40px"
+            width="40px"
+          />
         </div>
-      </a>
-    </ul>
+
+        <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
+        <p class="mb-1">{{ brew.street }}</p>
+      </b-list-group-item>
+    </b-list-group>
   </div>
 </template>
 
@@ -72,10 +85,11 @@ export default {
     return {
       selectedState: "All",
       selectedCity: "All",
+      breweryType: "All",
     };
   },
   computed: {
-    ...mapState(["brews", "isActive"]),
+    ...mapState(["brews"]),
     uniqueStates() {
       const states = this.brews
         .map((item) => item.state)
@@ -83,10 +97,20 @@ export default {
 
       return states;
     },
+    uniqueTypes() {
+      const types = this.brews
+        .map((item) => item.brewery_type)
+        .filter((value, index, self) => self.indexOf(value) === index);
+
+      return types;
+    },
     filteredCities: function () {
       const city = this.brews.filter(
         (brew) => this.selectedState === brew.state
       );
+
+      const list = this.brews;
+      list.sort((a, b) => (a.brewery_type > b.brewery_type ? 1 : -1));
 
       if (this.selectedState === "All") {
         return this.brews;
@@ -119,7 +143,7 @@ export default {
 <style lang="scss" scoped>
 .brew-list {
   overflow-y: scroll;
-  height: 100vh;
+  height: 90vh;
 }
 
 h5 {
@@ -130,16 +154,41 @@ p {
   font-size: 0.9rem;
 }
 
-.remove-padding {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .list-group {
   border-radius: 0 !important;
 }
 
 .list-group-item {
   border-width: 0 0 1px !important;
+}
+
+.priority-normal {
+  background: #e6e6e6;
+  color: #000000;
+  border: 2px solid #000000 !important;
+}
+
+.priority-medium {
+  background: #ffff00;
+  color: #330000;
+  border: 2px solid #330000 !important;
+}
+
+.priority-high {
+  background: #ff0000;
+  color: #ffffff;
+  border: 2px solid #ffffff !important;
+}
+
+.priority-low {
+  background: #b8b8b8;
+  color: #000000;
+  border: 2px solid #000000 !important;
+}
+
+.priority-critical {
+  background: #000000;
+  color: #ff0000;
+  border: 2px solid #ff0000 !important;
 }
 </style>
