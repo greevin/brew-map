@@ -28,7 +28,7 @@
       </select>
     </div>
 
-    <div class="form-group" style="padding-left: 15px; padding-right: 15px">
+    <!-- <div class="form-group" style="padding-left: 15px; padding-right: 15px">
       <label>Brewery Type</label>
       <select v-model="breweryType" class="form-control">
         <option value="All" selected>All Types</option>
@@ -40,9 +40,9 @@
           {{ breweryType }}
         </option>
       </select>
-    </div>
+    </div> -->
 
-    <hr />
+    <hr style="margin-bottom: 0px" />
     <b-list-group>
       <b-list-group-item
         href="#"
@@ -67,7 +67,11 @@
             <p class="mb-1">{{ brew.street }}</p>
           </b-col>
           <b-col cols="2" class="remove-padding" style="text-align: center">
-            <b-icon icon="bell-fill" style="width: 35px; height: 35px"></b-icon>
+            <b-icon
+              v-if="brew.brewery_type === 'brewpub'"
+              icon="exclamation-triangle-fill"
+              style="width: 35px; height: 35px"
+            ></b-icon>
           </b-col>
         </b-row>
       </b-list-group-item>
