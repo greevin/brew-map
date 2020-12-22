@@ -58,20 +58,18 @@
         }"
         @click="clickList(brew.latitude, brew.longitude, brew.id)"
       >
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">
-            <b>{{ brew.name }}</b>
-          </h5>
-          <img
-            src="../assets/security-camera.png"
-            alt=""
-            height="40px"
-            width="40px"
-          />
-        </div>
-
-        <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
-        <p class="mb-1">{{ brew.street }}</p>
+        <b-row>
+          <b-col cols="10" class="remove-padding">
+            <h5 class="mb-1">
+              <b>{{ brew.name }}</b>
+            </h5>
+            <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
+            <p class="mb-1">{{ brew.street }}</p>
+          </b-col>
+          <b-col cols="2" class="remove-padding" style="text-align: center">
+            <b-icon icon="bell-fill" style="width: 35px; height: 35px"></b-icon>
+          </b-col>
+        </b-row>
       </b-list-group-item>
     </b-list-group>
   </div>
