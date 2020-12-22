@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from "axios"
 
-const path = "https://api.openbrewerydb.org/breweries"
+const path = "https://api.openbrewerydb.org/breweries?per_page=50"
+// const path = "offices.json"
 
 Vue.use(Vuex)
 
