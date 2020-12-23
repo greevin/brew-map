@@ -11,7 +11,8 @@
       >
         <div class="info-window">
           <h6 class="mb-1">{{ activeAlarm.name }}</h6>
-          <p class="mb-1">{{ activeAlarm.city }}, {{ activeAlarm.state }}</p>
+          <p class="mb-1">{{ activeAlarm.priority }}</p>
+          <p class="mb-1">{{ activeAlarm.priority_id }}</p>
           <a
             :href="
               'http://localhost:8080/sub/office/synoptic/' +

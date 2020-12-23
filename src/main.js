@@ -5,15 +5,7 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store/store'
 import '@/plugins/bootstrap-vue'
-
-import 'leaflet/dist/leaflet.css';
-
-import * as VueGoogleMaps from 'vue2-google-maps'
-Vue.use(VueGoogleMaps,  {
-  load: {
-    key: ''
-  },
-})
+import '@/plugins/vue-googlemaps'
 
 Vue.config.productionTip = false
 

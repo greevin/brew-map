@@ -4,7 +4,7 @@
       <b-list-group-item
         href="#"
         class="flex-column align-items-start"
-        v-for="alarm in allAlarmList"
+        v-for="alarm in orderedPriority"
         :key="alarm.id"
         :style="'background-color:' + alarm.color_line"
         @click="clickList(alarm.latitude, alarm.longitude, alarm.id)"
@@ -19,6 +19,9 @@
             </p>
             <p class="mb-1" v-if="alarm.quantity">
               <b>Quantidade: </b> {{ alarm.quantity }}
+            </p>
+            <p class="mb-1" v-if="alarm.quantity">
+              <b>Prioridade ID: </b> {{ alarm.priority_id }}
             </p>
           </b-col>
           <b-col cols="2" class="remove-padding" style="text-align: center">
@@ -39,6 +42,13 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   computed: {
     ...mapGetters(["currentCount", "allAlarmList"]),
+    orderedPriority() {
+      let list = this.allAlarmList;
+
+      return list
+        .sort((a, b) => (a.priority_id > b.priority_id ? 1 : -1))
+        .reverse();
+    },
   },
   methods: {
     ...mapMutations(["onClickList"]),
