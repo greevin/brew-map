@@ -1,0 +1,182 @@
+{
+  "non_recognizing_alarmed_offices": [
+    {
+      "priority_id": 6,
+      "name": "Valreda Bitendrex",
+      "office_id": 902,
+      "longitude": "-17.860283",
+      "latitude": "-6.822699",
+      "priority": "Médio",
+      "icon": "camera-video-off-fill",
+      "color_line": "#ffff00",
+      "quantity": 4
+    },
+    {
+      "priority_id": 5,
+      "name": "Orbalix Oceanica",
+      "office_id": 972,
+      "longitude": "149.637798",
+      "latitude": "-63.706807",
+      "priority": "Médio",
+      "icon": "unlock-fill",
+      "color_line": "#ffff00",
+      "quantity": 1
+    },
+    {
+      "priority_id": 8,
+      "name": "Comtours Inventure",
+      "office_id": 619,
+      "longitude": "6.847461",
+      "latitude": "19.762979",
+      "priority": "Muito Crítico",
+      "icon": "person-x-fill",
+      "color_line": "#000000",
+      "quantity": 5
+    },
+    {
+      "priority_id": 5,
+      "name": "Interfind Comtrail",
+      "office_id": 956,
+      "longitude": "-63.722846",
+      "latitude": "28.002782",
+      "priority": "Baixo",
+      "icon": "unlock-fill",
+      "color_line": "#b8b8b8",
+      "quantity": 1
+    },
+    {
+      "priority_id": 8,
+      "name": "Qualitex Xelegyl",
+      "office_id": 631,
+      "longitude": "62.021525",
+      "latitude": "-21.460771",
+      "priority": "Médio",
+      "icon": "person-x-fill",
+      "color_line": "#ffff00",
+      "quantity": 5
+    },
+    {
+      "priority_id": 8,
+      "name": "Conjurica Bleeko",
+      "office_id": 579,
+      "longitude": "79.751862",
+      "latitude": "-19.506171",
+      "priority": "Normal",
+      "icon": "exclamation-triangle-fill",
+      "color_line": "#e6e6e6",
+      "quantity": 3
+    },
+    {
+      "priority_id": 9,
+      "name": "Polarium Extrawear",
+      "office_id": 781,
+      "longitude": "-23.966664",
+      "latitude": "76.872987",
+      "priority": "Alto",
+      "icon": "person-x-fill",
+      "color_line": "#ff0000",
+      "quantity": 1
+    },
+    {
+      "priority_id": 3,
+      "name": "Joviold Fuelworks",
+      "office_id": 598,
+      "longitude": "-1.396787",
+      "latitude": "-18.866983",
+      "priority": "Alto",
+      "icon": "camera-video-off-fill",
+      "color_line": "#ff0000",
+      "quantity": 5
+    },
+    {
+      "priority_id": 2,
+      "name": "Columella Architax",
+      "office_id": 888,
+      "longitude": "-152.438673",
+      "latitude": "9.157678",
+      "priority": "Baixo",
+      "icon": "unlock-fill",
+      "color_line": "#b8b8b8",
+      "quantity": 2
+    },
+    {
+      "priority_id": 2,
+      "name": "Plexia Multiflex",
+      "office_id": 632,
+      "longitude": "111.945141",
+      "latitude": "-44.563731",
+      "priority": "Normal",
+      "icon": "camera-video-off-fill",
+      "color_line": "#e6e6e6",
+      "quantity": 4
+    }
+  ],
+  "non_alarmedoffices": [
+    {
+      "name": "Jewell Melton",
+      "longitude": "100.796532",
+      "latitude": "61.032881",
+      "office_id": 888
+    },
+    {
+      "name": "Eunice Wise",
+      "longitude": "-10.946416",
+      "latitude": "4.99848",
+      "office_id": 697
+    },
+    {
+      "name": "Manuela Le",
+      "longitude": "-95.861904",
+      "latitude": "-55.922446",
+      "office_id": 815
+    },
+    {
+      "name": "Wilcox Villarreal",
+      "longitude": "-142.591345",
+      "latitude": "-37.361474",
+      "office_id": 695
+    },
+    {
+      "name": "Reed Bauer",
+      "longitude": "-126.517041",
+      "latitude": "22.554061",
+      "office_id": 607
+    },
+    {
+      "name": "Nichole Galloway",
+      "longitude": "-178.692367",
+      "latitude": "52.552543",
+      "office_id": 929
+    },
+    {
+      "name": "Lois Sears",
+      "longitude": "117.628018",
+      "latitude": "-8.958541",
+      "office_id": 953
+    },
+    {
+      "name": "Dunlap Tran",
+      "longitude": "-28.137335",
+      "latitude": "1.895022",
+      "office_id": 718
+    },
+    {
+      "name": "Madden Roberts",
+      "longitude": "-56.443597",
+      "latitude": "20.690157",
+      "office_id": 522
+    },
+    {
+      "name": "Tucker Meyer",
+      "longitude": "36.491339",
+      "latitude": "-38.789066",
+      "office_id": 778
+    }
+  ],
+  "recognizing_alarmed_offices": [],
+  "gmapsapikey": [
+    {
+      "value": "API_KEY_GMAPS_abc_hello"
+    }
+  ]
+}
