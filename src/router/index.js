@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Brew from '@/components/Brew'
+import Brew from '@/components/Brew/Brew'
 import BrewInfo from '@/components/BrewInfo'
 
 Vue.use(VueRouter)

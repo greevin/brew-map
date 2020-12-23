@@ -130,9 +130,6 @@ export default {
       }
     },
   },
-  mounted() {
-    this.$store.dispatch("getAllBreweries");
-  },
   methods: {
     ...mapMutations(["onClickList"]),
     clickList(lat, lng) {
