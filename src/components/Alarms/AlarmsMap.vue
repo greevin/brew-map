@@ -59,7 +59,7 @@ export default {
       infoWindowOptions: {
         pixelOffset: {
           width: 0,
-          height: -55,
+          height: -45,
         },
       },
       activeAlarm: {},

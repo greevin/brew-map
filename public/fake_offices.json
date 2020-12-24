@@ -8,7 +8,7 @@
       "latitude": "-23.43555",
       "priority": "Médio",
       "icon": "camera-video-off-fill",
-      "color_line": "#ffff00",
+      "color_line": "#FFFF00",
       "quantity": 4
     },
     {
@@ -17,9 +17,9 @@
       "office_id": 972,
       "longitude": "-46.65638",
       "latitude": "-23.626110",
-      "priority": "Médio",
+      "priority": "Normal",
       "icon": "unlock-fill",
-      "color_line": "#ffff00",
+      "color_line": "#e6e6e6",
       "quantity": 1
     },
     {
@@ -28,9 +28,9 @@
       "office_id": 619,
       "longitude": "-44.23410",
       "latitude": "-2.585360",
-      "priority": "Muito Crítico",
+      "priority": "Alto",
       "icon": "person-x-fill",
-      "color_line": "#000000",
+      "color_line": "#ff0000",
       "quantity": 5
     },
     {
@@ -39,13 +39,13 @@
       "office_id": 956,
       "longitude": "-38.32249",
       "latitude": "-12.90861",
-      "priority": "Baixo",
+      "priority": "Normal",
       "icon": "unlock-fill",
-      "color_line": "#b8b8b8",
+      "color_line": "#e6e6e6",
       "quantity": 1
     },
     {
-      "priority_id": 8,
+      "priority_id": 6,
       "name": "Qualitex Xelegyl",
       "office_id": 631,
       "longitude": "-43.16310",
@@ -63,7 +63,7 @@
       "latitude": "-21.84300",
       "priority": "Normal",
       "icon": "exclamation-triangle-fill",
-      "color_line": "#e6e6e6",
+      "color_line": "#ff0000",
       "quantity": 3
     },
     {
@@ -72,20 +72,20 @@
       "office_id": 781,
       "longitude": "-51.17139",
       "latitude": "-29.9944",
-      "priority": "Alto",
+      "priority": "Muito Crítico",
       "icon": "person-x-fill",
-      "color_line": "#ff0000",
+      "color_line": "#000000",
       "quantity": 1
     },
     {
-      "priority_id": 3,
+      "priority_id": 2,
       "name": "Joviold Fuelworks",
       "office_id": 598,
       "longitude": "-43.25055",
       "latitude": "-22.80999",
-      "priority": "Alto",
+      "priority": "Baixo",
       "icon": "camera-video-off-fill",
-      "color_line": "#ff0000",
+      "color_line": "#b8b8b8",
       "quantity": 5
     },
     {
@@ -105,9 +105,9 @@
       "office_id": 632,
       "longitude": "-43.95059",
       "latitude": "-19.851200",
-      "priority": "Normal",
+      "priority": "Baixo",
       "icon": "camera-video-off-fill",
-      "color_line": "#e6e6e6",
+      "color_line": "#b8b8b8",
       "quantity": 4
     }
   ],
