@@ -41,7 +41,7 @@
 import { mapGetters, mapMutations } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["currentCount", "allAlarmList"]),
+    ...mapGetters(["allAlarmList"]),
     orderedPriority() {
       let list = this.allAlarmList;
 
