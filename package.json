@@ -15,6 +15,7 @@
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "leaflet": "^1.7.1",
+    "marker-clusterer-plus": "^2.1.4",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vue2-gmap-custom-marker": "^6.0.0",
