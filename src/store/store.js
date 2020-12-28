@@ -11,9 +11,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     brews: [],
-    lat: -13.702797,
-    lng: -60.7216679,
-    zoom: 3
+    lat: -13.7881705,
+    lng: -51.141589,
+    zoom: 5
   },
   mutations: {
     setBreweries(state, payload) {

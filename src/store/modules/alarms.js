@@ -11,11 +11,10 @@ export default {
   },
   getters: {
     getGMapsApiKey: state => state.gMapsApiKey,
-    non_recognizing_alarmed_offices: state => state.non_recognizing_alarmed_offices,
     allAlarmList: state => {
-      const all = [...state.non_recognizing_alarmed_offices, ...state.non_alarmedoffices, ...state.recognizing_alarmed_offices]
-      return all;
-    }
+      const allAlarms = [...state.non_recognizing_alarmed_offices, ...state.non_alarmedoffices, ...state.recognizing_alarmed_offices]
+      return allAlarms.filter(latitude => latitude.latitude != null);
+    },
   },
   mutations: {
     setAlarmsList(state, payload) {

@@ -59,9 +59,9 @@
       "priority_id": 8,
       "name": "Conjurica Bleeko",
       "office_id": 579,
-      "longitude": "-46.56790",
-      "latitude": "-21.84300",
-      "priority": "Normal",
+      "longitude": null,
+      "latitude": null,
+      "priority": "Alto",
       "icon": "exclamation-triangle-fill",
       "color_line": "#ff0000",
       "quantity": 3
@@ -81,8 +81,8 @@
       "priority_id": 2,
       "name": "Joviold Fuelworks",
       "office_id": 598,
-      "longitude": "-43.25055",
-      "latitude": "-22.80999",
+      "longitude": null,
+      "latitude": null,
       "priority": "Baixo",
       "icon": "camera-video-off-fill",
       "color_line": "#b8b8b8",
@@ -120,26 +120,26 @@
     },
     {
       "name": "Eunice Wise",
-      "longitude": "-49.231998",
-      "latitude": "-25.40509",
+      "longitude": null,
+      "latitude": null,
       "office_id": 697
     },
     {
       "name": "Nichole Galloway",
-      "longitude": "-48.35699",
-      "latitude": "-10.2915000",
+      "longitude": null,
+      "latitude": null,
       "office_id": 929
     },
     {
       "name": "Lois Sears",
-      "longitude": "-56.1166",
-      "latitude": "-15.65289",
+      "longitude": null,
+      "latitude": null,
       "office_id": 953
     },
     {
       "name": "Tucker Meyer",
-      "longitude": "-51.07220",
-      "latitude": "0.050664",
+      "longitude": null,
+      "latitude": null,
       "office_id": 778
     }
   ],
