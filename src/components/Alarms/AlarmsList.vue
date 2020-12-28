@@ -6,30 +6,31 @@
         class="flex-column align-items-start"
         v-for="alarm in orderedPriority"
         :key="alarm.id"
-        :style="'background-color:' + alarm.color_line"
         @click="clickList(alarm.latitude, alarm.longitude, alarm.id)"
       >
-        <b-row v-show="alarm.latitude">
+        <b-row class="row align-items-center">
           <b-col cols="10" class="remove-padding">
-            <h5 class="mb-1">
+            <h6 class="mb-1">
               <b>{{ alarm.name }}</b>
-            </h5>
+            </h6>
             <p class="mb-1" v-if="alarm.priority">
-              <b>Prioridade: </b> {{ alarm.priority }}
-            </p>
-            <p class="mb-1" v-if="alarm.quantity">
-              <b>Quantidade: </b> {{ alarm.quantity }}
-            </p>
-            <p class="mb-1" v-if="alarm.quantity">
-              <b>Prioridade ID: </b> {{ alarm.priority_id }}
+              <b>Prioridade: </b> {{ alarm.priority }} ({{ alarm.quantity }})
             </p>
           </b-col>
           <b-col cols="2" class="remove-padding" style="text-align: center">
-            <b-icon
-              v-if="alarm.icon"
-              :icon="alarm.icon"
-              style="width: 35px; height: 35px"
-            ></b-icon>
+            <b-iconstack font-scale="2">
+              <b-icon
+                stacked
+                icon="circle-fill"
+                :style="'color:' + alarm.color_line"
+              ></b-icon>
+              <b-icon
+                stacked
+                :icon="alarm.icon"
+                scale="0.5"
+                variant="grey"
+              ></b-icon>
+            </b-iconstack>
           </b-col>
         </b-row>
       </b-list-group-item>
@@ -63,5 +64,14 @@ export default {
 .size-list {
   overflow-y: scroll;
   height: 90vh;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 13px !important;
+  line-height: 1.3rem !important;
 }
 </style>
