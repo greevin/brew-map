@@ -16,7 +16,6 @@ export default {
     },
     allAlarm: state => {
       let alarm = state.alarmedoffices.filter(latitude => latitude.latitude != null)
-      console.log(alarm)
 
       return alarm.sort((a, b) => (a.priority_id > b.priority_id ? 1 : -1)).reverse()
     },
