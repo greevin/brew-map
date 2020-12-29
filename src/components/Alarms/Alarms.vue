@@ -33,6 +33,13 @@ nav {
   -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04),
     0 1px 6px rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+  height: 100px;
+}
+
+.remove-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: 100px;
 }
 
 @media (max-width: 1439px) {
@@ -43,8 +50,6 @@ nav {
     margin-top: 90px;
   }
   .remove-padding {
-    padding-left: 0px;
-    padding-right: 0px;
     margin-top: 90px;
   }
 }
@@ -57,8 +62,6 @@ nav {
     margin-top: 70px;
   }
   .remove-padding {
-    padding-left: 0px;
-    padding-right: 0px;
     margin-top: 70px;
   }
 }

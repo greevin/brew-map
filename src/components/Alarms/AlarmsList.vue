@@ -107,10 +107,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* .size-list {
+.size-list {
   overflow-y: auto;
-  height: 89vh;
-} */
+  height: 100vh;
+}
 
 @media (max-width: 1439px) {
   .size-list {
@@ -118,13 +118,6 @@ export default {
     height: 89vh;
   }
 }
-
-/* @media (max-width: 1199px) {
-  .size-list {
-    overflow-y: auto;
-    height: 70vh;
-  }
-} */
 
 .h6,
 h6 {
