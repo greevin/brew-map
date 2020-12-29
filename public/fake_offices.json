@@ -1,5 +1,5 @@
 {
-  "non_recognizing_alarmed_offices": [
+  "alarmedoffices": [
     {
       "priority_id": 6,
       "name": "Valreda Bitendrex",
@@ -111,7 +111,7 @@
       "quantity": 4
     }
   ],
-  "non_alarmedoffices": [
+  "notalarmedoffices": [
     {
       "name": "Jewell Melton",
       "longitude": "-48.13299",
@@ -143,7 +143,6 @@
       "office_id": 778
     }
   ],
-  "recognizing_alarmed_offices": [],
   "gmapsapikey": [
     {
       "value": "API_KEY_GMAPS_abc_hello"

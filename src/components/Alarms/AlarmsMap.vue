@@ -11,8 +11,14 @@
       >
         <div class="info-window">
           <h6 class="mb-1">{{ activeAlarm.name }}</h6>
-          <p class="mb-1">{{ activeAlarm.priority }}</p>
-          <p class="mb-1">{{ activeAlarm.priority_id }}</p>
+          <p class="mb-1" v-if="activeAlarm.priority">
+            <b>Prioridade: </b> {{ activeAlarm.priority }} ({{
+              activeAlarm.quantity
+            }})
+          </p>
+          <p v-if="activeAlarm.user_full_name_recognizing">
+            <b>Operador: </b> {{ activeAlarm.user_full_name_recognizing }}
+          </p>
           <a
             :href="
               'http://localhost:8080/sub/office/synoptic/' +
@@ -38,6 +44,55 @@
             <b-icon
               stacked
               icon="circle-fill"
+              variant="info"
+              :style="'color:' + alarm.color_line + ' !important'"
+            ></b-icon>
+            <b-icon
+              v-if="alarm.icon"
+              stacked
+              :icon="alarm.icon"
+              scale="0.5"
+              variant="black"
+            ></b-icon>
+            <b-icon
+              v-else
+              stacked
+              icon="geo-alt-fill"
+              scale="0.5"
+              variant="black"
+            ></b-icon>
+            <b-icon
+              v-if="alarm.user_full_name_recognizing"
+              stacked
+              icon="circle-fill"
+              shift-h="6"
+              shift-v="-8"
+              scale="0.6"
+              variant="white"
+            ></b-icon>
+            <b-icon
+              v-if="alarm.user_full_name_recognizing"
+              stacked
+              icon="person-fill"
+              shift-h="6"
+              shift-v="-8"
+              scale="0.4"
+              variant="grey"
+            ></b-icon>
+            <b-icon
+              stacked
+              v-if="alarm.user_full_name_recognizing"
+              icon="circle"
+              variant="success"
+              shift-h="6"
+              shift-v="-8"
+              scale="0.6"
+            ></b-icon>
+          </b-iconstack>
+          <!-- <b-iconstack font-scale="3">
+            <b-icon
+              stacked
+              icon="circle-fill"
               :style="'color:' + alarm.color_line"
             ></b-icon>
             <b-icon
@@ -46,7 +101,7 @@
               scale="0.5"
               variant="grey"
             ></b-icon>
-          </b-iconstack>
+          </b-iconstack> -->
         </gmap-custom-marker>
       </GmapCluster>
     </GmapMap>

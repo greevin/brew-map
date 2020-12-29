@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from "axios"
 
-import alarms from './modules/alarms'
+// import alarms from './modules/alarms'
+import alarmsv2 from './modules/alarmsv2'
 
 const path = "https://api.openbrewerydb.org/breweries?per_page=50"
 
@@ -54,6 +55,7 @@ export default new Vuex.Store({
     },
   },
   modules: {
-    alarms
+    // alarms,
+    alarmsv2
   }
 })

@@ -4,7 +4,7 @@
       <b-list-group-item
         href="#"
         class="flex-column align-items-start"
-        v-for="alarm in orderedPriority"
+        v-for="alarm in allAlarm"
         :key="alarm.id"
         @click="clickList(alarm.latitude, alarm.longitude, alarm.id)"
       >
@@ -22,16 +22,58 @@
               <b-icon
                 stacked
                 icon="circle-fill"
-                :style="'color:' + alarm.color_line"
+                :style="'color:' + alarm.color_line + ' !important'"
+                variant="info"
               ></b-icon>
               <b-icon
+                v-if="alarm.icon"
                 stacked
                 :icon="alarm.icon"
                 scale="0.5"
                 variant="grey"
               ></b-icon>
+              <b-icon
+                v-else
+                stacked
+                icon="geo-alt-fill"
+                scale="0.5"
+                variant="grey"
+              ></b-icon>
+              <b-icon
+                v-if="alarm.user_full_name_recognizing"
+                stacked
+                icon="circle-fill"
+                shift-h="6"
+                shift-v="-8"
+                scale="0.6"
+                variant="white"
+              ></b-icon>
+              <b-icon
+                v-if="alarm.user_full_name_recognizing"
+                stacked
+                icon="person-fill"
+                shift-h="6"
+                shift-v="-8"
+                scale="0.4"
+                variant="grey"
+              ></b-icon>
+              <b-icon
+                stacked
+                v-if="alarm.user_full_name_recognizing"
+                icon="circle"
+                variant="success"
+                shift-h="6"
+                shift-v="-8"
+                scale="0.6"
+              ></b-icon>
             </b-iconstack>
           </b-col>
+
+          <small
+            v-if="alarm.user_full_name_recognizing"
+            style="padding-right: 15px; padding-left: 15px"
+            ><b>Operador: </b> {{ alarm.user_full_name_recognizing }}</small
+          >
         </b-row>
       </b-list-group-item>
     </b-list-group>
@@ -42,13 +84,10 @@
 import { mapGetters, mapMutations } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["allAlarmList"]),
+    ...mapGetters(["allAlarm"]),
     orderedPriority() {
-      let list = this.allAlarmList;
-
-      return list
-        .sort((a, b) => (a.priority_id > b.priority_id ? 1 : -1))
-        .reverse();
+      let list = this.allAlarm;
+      return list.sort((a, b) => (a.priority_id > b.priority_id ? 1 : -1));
     },
   },
   methods: {
@@ -66,12 +105,23 @@ export default {
   height: 90vh;
 }
 
-h4 {
-  font-size: 16px;
+.h6,
+h6 {
+  font-size: 0.9rem;
+}
+
+.mb-1,
+.my-1 {
+  margin-bottom: 0.1rem !important;
 }
 
 p {
   font-size: 13px !important;
   line-height: 1.3rem !important;
+}
+
+.list-group-item {
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 </style>
