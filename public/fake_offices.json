@@ -9,7 +9,9 @@
       "priority": "Médio",
       "icon": "camera-video-off-fill",
       "color_line": "#FFFF00",
-      "quantity": 4
+      "quantity": 4,
+      "user_full_name_recognizing": "João da Silva",
+      "user_id_recognizing": 255
     },
     {
       "priority_id": 5,
@@ -20,7 +22,9 @@
       "priority": "Normal",
       "icon": "unlock-fill",
       "color_line": "#e6e6e6",
-      "quantity": 1
+      "quantity": 1,
+      "user_full_name_recognizing": "Maria Eduarda",
+      "user_id_recognizing": "111"
     },
     {
       "priority_id": 8,
@@ -31,7 +35,9 @@
       "priority": "Alto",
       "icon": "person-x-fill",
       "color_line": "#ff0000",
-      "quantity": 5
+      "quantity": 5,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     },
     {
       "priority_id": 5,
@@ -42,7 +48,9 @@
       "priority": "Normal",
       "icon": "unlock-fill",
       "color_line": "#e6e6e6",
-      "quantity": 1
+      "quantity": 1,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     },
     {
       "priority_id": 6,
@@ -53,7 +61,9 @@
       "priority": "Médio",
       "icon": "person-x-fill",
       "color_line": "#ffff00",
-      "quantity": 5
+      "quantity": 5,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     },
     {
       "priority_id": 8,
@@ -64,7 +74,9 @@
       "priority": "Alto",
       "icon": "exclamation-triangle-fill",
       "color_line": "#ff0000",
-      "quantity": 3
+      "quantity": 3,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     },
     {
       "priority_id": 9,
@@ -75,7 +87,9 @@
       "priority": "Muito Crítico",
       "icon": "person-x-fill",
       "color_line": "#000000",
-      "quantity": 1
+      "quantity": 1,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     },
     {
       "priority_id": 2,
@@ -86,7 +100,9 @@
       "priority": "Baixo",
       "icon": "camera-video-off-fill",
       "color_line": "#b8b8b8",
-      "quantity": 5
+      "quantity": 5,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     },
     {
       "priority_id": 2,
@@ -97,7 +113,9 @@
       "priority": "Baixo",
       "icon": "unlock-fill",
       "color_line": "#b8b8b8",
-      "quantity": 2
+      "quantity": 2,
+      "user_full_name_recognizing": "Paula Maria",
+      "user_id_recognizing": "123"
     },
     {
       "priority_id": 2,
@@ -108,7 +126,9 @@
       "priority": "Baixo",
       "icon": "camera-video-off-fill",
       "color_line": "#b8b8b8",
-      "quantity": 4
+      "quantity": 4,
+      "user_full_name_recognizing": null,
+      "user_id_recognizing": null
     }
   ],
   "notalarmedoffices": [

@@ -9,15 +9,28 @@
         @click="clickList(alarm.latitude, alarm.longitude, alarm.id)"
       >
         <b-row class="row align-items-center">
-          <b-col cols="10" class="remove-padding">
+          <b-col cols="10">
             <h6 class="mb-1">
               <b>{{ alarm.name }}</b>
             </h6>
             <p class="mb-1" v-if="alarm.priority">
               <b>Prioridade: </b> {{ alarm.priority }} ({{ alarm.quantity }})
             </p>
+            <p
+              v-if="alarm.user_full_name_recognizing"
+              class="mb-1"
+              style="margin-top: -2px"
+            >
+              <b>Operador: </b> {{ alarm.user_full_name_recognizing }}
+            </p>
           </b-col>
-          <b-col cols="2" class="remove-padding" style="text-align: center">
+          <b-col
+            cols="2"
+            style="text-align: center; padding: 0px"
+            :style="
+              alarm.user_full_name_recognizing ? 'margin-top: -10px;' : ''
+            "
+          >
             <b-iconstack font-scale="2">
               <b-icon
                 stacked
@@ -68,12 +81,6 @@
               ></b-icon>
             </b-iconstack>
           </b-col>
-
-          <small
-            v-if="alarm.user_full_name_recognizing"
-            style="padding-right: 15px; padding-left: 15px"
-            ><b>Operador: </b> {{ alarm.user_full_name_recognizing }}</small
-          >
         </b-row>
       </b-list-group-item>
     </b-list-group>
