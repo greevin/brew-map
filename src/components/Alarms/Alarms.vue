@@ -5,7 +5,7 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     </b-navbar>
 
-    <b-row>
+    <b-row style="height: 100vh">
       <b-col cols="3" class="remove-padding">
         <alarms-list />
       </b-col>
@@ -29,17 +29,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.remove-padding {
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-top: 90px;
-}
-
 nav {
-  height: 90px;
   -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04),
     0 1px 6px rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 1439px) {
+  nav {
+    height: 90px;
+  }
+  .top-90 {
+    margin-top: 90px;
+  }
+  .remove-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 1199px) {
+  nav {
+    height: 70px;
+  }
+  .top-90 {
+    margin-top: 70px;
+  }
+  .remove-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 70px;
+  }
 }
 
 .row {
@@ -47,7 +68,7 @@ nav {
   margin-left: 0;
 }
 
-.top-90 {
+/* .top-90 {
   margin-top: 90px;
-}
+} */
 </style>
