@@ -1,4 +1,4 @@
-# brew
+# brew and other things
 
 ## Project setup
 ```
