@@ -73,7 +73,7 @@ export default {
 @media (max-width: 1439px) {
   .size-list {
     overflow-y: auto;
-    height: 89vh;
+    height: 70vh;
   }
 }
 
