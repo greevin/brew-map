@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const path = "fake_offices.json"
+const path = "officesv2.json"
 
 export default {
   state: {

@@ -40,68 +40,11 @@
           :label="alarm.icon"
           @mouseenter.native.stop="handleMarkerClicked(alarm)"
         >
-          <b-iconstack font-scale="3">
-            <b-icon
-              stacked
-              icon="circle-fill"
-              variant="info"
-              :style="'color:' + alarm.color_line + ' !important'"
-            ></b-icon>
-            <b-icon
-              v-if="alarm.icon"
-              stacked
-              :icon="alarm.icon"
-              scale="0.5"
-              variant="black"
-            ></b-icon>
-            <b-icon
-              v-else
-              stacked
-              icon="geo-alt-fill"
-              scale="0.5"
-              variant="black"
-            ></b-icon>
-            <b-icon
-              v-if="alarm.user_full_name_recognizing"
-              stacked
-              icon="circle-fill"
-              shift-h="6"
-              shift-v="-8"
-              scale="0.6"
-              variant="white"
-            ></b-icon>
-            <b-icon
-              v-if="alarm.user_full_name_recognizing"
-              stacked
-              icon="person-fill"
-              shift-h="6"
-              shift-v="-8"
-              scale="0.4"
-              variant="grey"
-            ></b-icon>
-            <b-icon
-              stacked
-              v-if="alarm.user_full_name_recognizing"
-              icon="circle"
-              variant="success"
-              shift-h="6"
-              shift-v="-8"
-              scale="0.6"
-            ></b-icon>
-          </b-iconstack>
-          <!-- <b-iconstack font-scale="3">
-            <b-icon
-              stacked
-              icon="circle-fill"
-              :style="'color:' + alarm.color_line"
-            ></b-icon>
-            <b-icon
-              stacked
-              :icon="alarm.icon"
-              scale="0.5"
-              variant="grey"
-            ></b-icon>
-          </b-iconstack> -->
+          <map-icons
+            :color-line="alarm.color_line"
+            :icon="alarm.icon"
+            :user="alarm.user_full_name_recognizing"
+          />
         </gmap-custom-marker>
       </GmapCluster>
     </GmapMap>
@@ -112,11 +55,13 @@
 import { mapGetters, mapState } from "vuex";
 import GmapCustomMarker from "vue2-gmap-custom-marker";
 import GmapCluster from "vue2-google-maps/dist/components/cluster";
+import MapIcons from "../Icons/MapIcons";
 
 export default {
   components: {
     GmapCustomMarker,
     GmapCluster,
+    MapIcons,
   },
   computed: {
     ...mapState(["lat", "lng", "zoom"]),

@@ -26,60 +26,16 @@
           </b-col>
           <b-col
             cols="2"
-            style="text-align: center; padding: 0px"
+            style="text-align: center"
             :style="
               alarm.user_full_name_recognizing ? 'margin-top: -10px;' : ''
             "
           >
-            <b-iconstack font-scale="2">
-              <b-icon
-                stacked
-                icon="circle-fill"
-                :style="'color:' + alarm.color_line + ' !important'"
-                variant="info"
-              ></b-icon>
-              <b-icon
-                v-if="alarm.icon"
-                stacked
-                :icon="alarm.icon"
-                scale="0.5"
-                variant="grey"
-              ></b-icon>
-              <b-icon
-                v-else
-                stacked
-                icon="geo-alt-fill"
-                scale="0.5"
-                variant="grey"
-              ></b-icon>
-              <b-icon
-                v-if="alarm.user_full_name_recognizing"
-                stacked
-                icon="circle-fill"
-                shift-h="6"
-                shift-v="-8"
-                scale="0.6"
-                variant="white"
-              ></b-icon>
-              <b-icon
-                v-if="alarm.user_full_name_recognizing"
-                stacked
-                icon="person-fill"
-                shift-h="6"
-                shift-v="-8"
-                scale="0.4"
-                variant="grey"
-              ></b-icon>
-              <b-icon
-                stacked
-                v-if="alarm.user_full_name_recognizing"
-                icon="circle"
-                variant="success"
-                shift-h="6"
-                shift-v="-8"
-                scale="0.6"
-              ></b-icon>
-            </b-iconstack>
+            <map-icons
+              :color-line="alarm.color_line"
+              :icon="alarm.icon"
+              :user="alarm.user_full_name_recognizing"
+            />
           </b-col>
         </b-row>
       </b-list-group-item>
@@ -89,7 +45,9 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import MapIcons from "../Icons/MapIcons";
 export default {
+  components: { MapIcons },
   computed: {
     ...mapGetters(["allAlarm"]),
     orderedPriority() {
