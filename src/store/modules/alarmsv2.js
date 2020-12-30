@@ -28,8 +28,8 @@ export default {
     },
   },
   actions: {
-    getAllAlarms({commit}) {
-      axios.get(path).then((res) => {
+    async getAllAlarms({commit}) {
+      await axios.get(path).then((res) => {
         commit("setAlarmsList", res.data)
       });
     }
