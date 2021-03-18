@@ -52,48 +52,48 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-import GmapCustomMarker from "vue2-gmap-custom-marker";
-import GmapCluster from "vue2-google-maps/dist/components/cluster";
-import MapIcons from "../Icons/MapIcons";
+import { mapGetters, mapState } from 'vuex';
+import GmapCustomMarker from 'vue2-gmap-custom-marker';
+import GmapCluster from 'vue2-google-maps/dist/components/cluster';
+import MapIcons from '../Icons/MapIcons';
 
 export default {
   components: {
     GmapCustomMarker,
     GmapCluster,
-    MapIcons,
+    MapIcons
   },
   computed: {
-    ...mapState(["lat", "lng", "zoom"]),
-    ...mapGetters(["mapCenter", "updateMaps", "allAlarmList"]),
+    ...mapState(['lat', 'lng', 'zoom']),
+    ...mapGetters(['mapCenter', 'updateMaps', 'allAlarmList']),
     infoWindowPosition() {
       return {
         lat: parseFloat(this.activeAlarm.latitude),
-        lng: parseFloat(this.activeAlarm.longitude),
+        lng: parseFloat(this.activeAlarm.longitude)
       };
-    },
+    }
   },
   data() {
     return {
       infoWindowOptions: {
         pixelOffset: {
           width: 0,
-          height: -45,
-        },
+          height: -45
+        }
       },
       marker: {
         lat: 50.60229509638775,
-        lng: 3.0247059387528408,
+        lng: 3.0247059387528408
       },
       activeAlarm: {},
-      infoWindowOpened: false,
+      infoWindowOpened: false
     };
   },
   methods: {
     getPosition(brew) {
       return {
         lat: parseFloat(brew.latitude),
-        lng: parseFloat(brew.longitude),
+        lng: parseFloat(brew.longitude)
       };
     },
     handleMarkerClicked(brew) {
@@ -103,8 +103,8 @@ export default {
     handleInfoWindowClose() {
       this.activeAlarm = {};
       this.infoWindowOpened = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
