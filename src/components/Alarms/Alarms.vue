@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import AlarmsList from "./AlarmsList";
-import AlarmsMap from "./AlarmsMap";
+import AlarmsList from './AlarmsList';
+import AlarmsMap from './AlarmsMap';
 
 export default {
   components: { AlarmsList, AlarmsMap },
   mounted() {
-    this.$store.dispatch("getAllAlarms");
-  },
+    this.$store.dispatch('getAllAlarms');
+  }
 };
 </script>
 

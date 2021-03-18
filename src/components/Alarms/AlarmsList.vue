@@ -44,23 +44,29 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
-import MapIcons from "../Icons/MapIcons";
+import { mapGetters, mapMutations } from 'vuex';
+import MapIcons from '../Icons/MapIcons';
 export default {
   components: { MapIcons },
   computed: {
-    ...mapGetters(["allAlarm"]),
+    ...mapGetters(['allAlarm']),
     orderedPriority() {
-      let list = this.allAlarm;
-      return list.sort((a, b) => (a.priority_id > b.priority_id ? 1 : -1));
-    },
+      const list = this.allAlarm;
+      return list.sort((a, b) => {
+        if(a.priority_id > b.priority_id) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
   },
   methods: {
-    ...mapMutations(["onClickList"]),
+    ...mapMutations(['onClickList']),
     clickList(lat, lng) {
       this.onClickList([lat, lng]);
-    },
-  },
+    }
+  }
 };
 </script>
 

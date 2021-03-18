@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import BrewList from "./BrewList";
-import BrewGMap from "./BrewGMap.vue";
+import BrewList from './BrewList';
+import BrewGMap from './BrewGMap.vue';
 
 export default {
   components: { BrewList, BrewGMap },
-  name: "Brew",
+  name: 'Brew',
   mounted() {
-    this.$store.dispatch("getAllBreweries");
-  },
+    this.$store.dispatch('getAllBreweries');
+  }
 };
 </script>
 
