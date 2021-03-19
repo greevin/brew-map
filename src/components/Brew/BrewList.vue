@@ -28,20 +28,6 @@
       </select>
     </div>
 
-    <!-- <div class="form-group" style="padding-left: 15px; padding-right: 15px">
-      <label>Brewery Type</label>
-      <select v-model="breweryType" class="form-control">
-        <option value="All" selected>All Types</option>
-        <option
-          v-for="breweryType in uniqueTypes"
-          :value="breweryType.id"
-          :key="breweryType.id"
-        >
-          {{ breweryType }}
-        </option>
-      </select>
-    </div> -->
-
     <hr style="margin-bottom: 0px" />
     <b-list-group>
       <b-list-group-item
@@ -80,18 +66,18 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   data() {
     return {
-      selectedState: "All",
-      selectedCity: "All",
-      breweryType: "All",
+      selectedState: 'All',
+      selectedCity: 'All',
+      breweryType: 'All'
     };
   },
   computed: {
-    ...mapState(["brews"]),
+    ...mapState(['brews']),
     uniqueStates() {
       const states = this.brews
         .map((item) => item.state)
@@ -106,36 +92,42 @@ export default {
 
       return types;
     },
-    filteredCities: function () {
+    filteredCities:  () =>  {
       const city = this.brews.filter(
         (brew) => this.selectedState === brew.state
       );
 
       const list = this.brews;
-      list.sort((a, b) => (a.brewery_type > b.brewery_type ? 1 : -1));
+      list.sort((a, b) => {
+        if(a.brewery_type > b.brewery_type) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
 
-      if (this.selectedState === "All") {
+      if (this.selectedState === 'All') {
         return this.brews;
       } else {
         return city;
       }
     },
-    filteredList: function () {
+    filteredList:  () => {
       const city = this.brews.filter((brew) => this.selectedCity === brew.city);
 
-      if (this.selectedCity === "All") {
+      if (this.selectedCity === 'All') {
         return this.filteredCities;
       } else {
         return city;
       }
-    },
+    }
   },
   methods: {
-    ...mapMutations(["onClickList"]),
+    ...mapMutations(['onClickList']),
     clickList(lat, lng) {
       this.onClickList([lat, lng]);
-    },
-  },
+    }
+  }
 };
 </script>
 
