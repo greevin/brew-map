@@ -44,12 +44,12 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
-import MapIcons from '../Icons/MapIcons';
+import { mapGetters, mapMutations } from "vuex";
+import MapIcons from "../Icons/MapIcons";
 export default {
   components: { MapIcons },
   computed: {
-    ...mapGetters(['allAlarm']),
+    ...mapGetters(["allAlarm"]),
     orderedPriority() {
       const list = this.allAlarm;
       return list.sort((a, b) => {
@@ -59,14 +59,14 @@ export default {
           return -1;
         }
       });
-    }
+    },
   },
   methods: {
-    ...mapMutations(['onClickList']),
+    ...mapMutations(["onClickList"]),
     clickList(lat, lng) {
       this.onClickList([lat, lng]);
-    }
-  }
+    },
+  },
 };
 </script>
 
