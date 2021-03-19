@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  props: ["colorLine", "icon", "user"],
+  props: ['colorLine', 'icon', 'user']
 };
 </script>
 
