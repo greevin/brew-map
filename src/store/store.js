@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import alarmsv2 from './modules/alarmsv2';
 
-const path = 'https://api.openbrewerydb.org/breweries?per_page=50';
+const path = 'officesv2.json';
 
 Vue.use(Vuex);
 
