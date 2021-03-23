@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'iconsminds';
+  font-family: 'iconsminds', Arial, sans-serif;
   src: url('../font/iconsminds.eot?42207379');
   src: url('../font/iconsminds.eot?42207379#iefix') format('embedded-opentype'),
        url('../font/iconsminds.woff2?42207379') format('woff2'),
@@ -21,10 +21,9 @@
 */
  
  [class^="iconsminds-"]:before, [class*=" iconsminds-"]:before {
-  font-family: "iconsminds";
+  font-family: 'iconsminds', Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
-  speak: none;
  
   display: inline-block;
   text-decoration: inherit;
