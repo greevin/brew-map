@@ -52,13 +52,6 @@
             <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
             <p class="mb-1">{{ brew.street }}</p>
           </b-col>
-          <b-col cols="2" class="remove-padding" style="text-align: center">
-            <b-icon
-              v-if="brew.brewery_type === 'brewpub'"
-              icon="exclamation-triangle-fill"
-              style="width: 35px; height: 35px"
-            ></b-icon>
-          </b-col>
         </b-row>
       </b-list-group-item>
     </b-list-group>
@@ -80,7 +73,7 @@ export default {
     ...mapState(['brews']),
     uniqueStates() {
       const states = this.brews
-        .map((item) => item.state)
+        .map(item => item.state)
         .filter((value, index, self) => self.indexOf(value) === index);
 
       return states;
@@ -92,9 +85,9 @@ export default {
 
       return types;
     },
-    filteredCities:  () =>  {
+    filteredCities() {
       const city = this.brews.filter(
-        (brew) => this.selectedState === brew.state
+        brew => this.selectedState === brew.state
       );
 
       const list = this.brews;
@@ -112,8 +105,8 @@ export default {
         return city;
       }
     },
-    filteredList:  () => {
-      const city = this.brews.filter((brew) => this.selectedCity === brew.city);
+    filteredList() {
+      const city = this.brews.filter(brew => this.selectedCity === brew.city);
 
       if (this.selectedCity === 'All') {
         return this.filteredCities;
