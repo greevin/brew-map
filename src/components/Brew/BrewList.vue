@@ -80,7 +80,7 @@ export default {
     },
     uniqueTypes() {
       const types = this.brews
-        .map((item) => item.brewery_type)
+        .map(item => item.brewery_type)
         .filter((value, index, self) => self.indexOf(value) === index);
 
       return types;

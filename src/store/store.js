@@ -27,7 +27,7 @@ export default new Vuex.Store({
   },
   actions: {
     getAllBreweries({ commit }) {
-      axios.get(path).then((res) => {
+      axios.get(path).then(res => {
         commit('setBreweries', res.data);
       });
     }
@@ -46,7 +46,7 @@ export default new Vuex.Store({
         lng: parseFloat(state.lng)
       };
     },
-    updateMaps: (state) => {
+    updateMaps: state => {
       return {
         lat: parseFloat(state.lat),
         lng: parseFloat(state.lng)

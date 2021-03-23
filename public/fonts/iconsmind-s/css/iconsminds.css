@@ -265,7 +265,7 @@
 .iconsminds-loading-3:before { content: '\e8d3'; } /* '' */
 .iconsminds-magic-wand:before { content: '\e8d4'; } /* '' */
 .iconsminds-magnifi-glass--:before { content: '\e8d5'; } /* '' */
-.iconsminds-magnifi-glass--:before { content: '\e8d6'; } /* '' */
+.iconsminds-magnifi-glass-:before { content: '\e8d6'; } /* '' */
 .iconsminds-magnifi-glass:before { content: '\e8d7'; } /* '' */
 .iconsminds-memory-card-2:before { content: '\e8d8'; } /* '' */
 .iconsminds-mine:before { content: '\e8d9'; } /* '' */
@@ -576,7 +576,7 @@
 .iconsminds-edit-map:before { content: '\ea18'; } /* '' */
 .iconsminds-geo2:before { content: '\ea19'; } /* '' */
 .iconsminds-geo2--:before { content: '\ea1a'; } /* '' */
-.iconsminds-geo2--:before { content: '\ea1b'; } /* '' */
+.iconsminds-geo2-:before { content: '\ea1b'; } /* '' */
 .iconsminds-globe-2:before { content: '\ea1c'; } /* '' */
 .iconsminds-location-2:before { content: '\ea1d'; } /* '' */
 .iconsminds-map2:before { content: '\ea1e'; } /* '' */
