@@ -28,20 +28,6 @@
       </select>
     </div>
 
-    <!-- <div class="form-group" style="padding-left: 15px; padding-right: 15px">
-      <label>Brewery Type</label>
-      <select v-model="breweryType" class="form-control">
-        <option value="All" selected>All Types</option>
-        <option
-          v-for="breweryType in uniqueTypes"
-          :value="breweryType.id"
-          :key="breweryType.id"
-        >
-          {{ breweryType }}
-        </option>
-      </select>
-    </div> -->
-
     <hr style="margin-bottom: 0px" />
     <b-list-group>
       <b-list-group-item
@@ -66,13 +52,6 @@
             <p class="mb-1">{{ brew.city }}, {{ brew.state }}</p>
             <p class="mb-1">{{ brew.street }}</p>
           </b-col>
-          <b-col cols="2" class="remove-padding" style="text-align: center">
-            <b-icon
-              v-if="brew.brewery_type === 'brewpub'"
-              icon="exclamation-triangle-fill"
-              style="width: 35px; height: 35px"
-            ></b-icon>
-          </b-col>
         </b-row>
       </b-list-group-item>
     </b-list-group>
@@ -80,62 +59,68 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   data() {
     return {
-      selectedState: "All",
-      selectedCity: "All",
-      breweryType: "All",
+      selectedState: 'All',
+      selectedCity: 'All',
+      breweryType: 'All'
     };
   },
   computed: {
-    ...mapState(["brews"]),
+    ...mapState(['brews']),
     uniqueStates() {
       const states = this.brews
-        .map((item) => item.state)
+        .map(item => item.state)
         .filter((value, index, self) => self.indexOf(value) === index);
 
       return states;
     },
     uniqueTypes() {
       const types = this.brews
-        .map((item) => item.brewery_type)
+        .map(item => item.brewery_type)
         .filter((value, index, self) => self.indexOf(value) === index);
 
       return types;
     },
-    filteredCities: function () {
+    filteredCities() {
       const city = this.brews.filter(
-        (brew) => this.selectedState === brew.state
+        brew => this.selectedState === brew.state
       );
 
       const list = this.brews;
-      list.sort((a, b) => (a.brewery_type > b.brewery_type ? 1 : -1));
+      list.sort((a, b) => {
+        if(a.brewery_type > b.brewery_type) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
 
-      if (this.selectedState === "All") {
+      if (this.selectedState === 'All') {
         return this.brews;
       } else {
         return city;
       }
     },
-    filteredList: function () {
-      const city = this.brews.filter((brew) => this.selectedCity === brew.city);
+    filteredList() {
+      const city = this.brews.filter(brew => this.selectedCity === brew.city);
 
-      if (this.selectedCity === "All") {
+      if (this.selectedCity === 'All') {
         return this.filteredCities;
       } else {
         return city;
       }
-    },
+    }
   },
   methods: {
-    ...mapMutations(["onClickList"]),
+    ...mapMutations(['onClickList']),
     clickList(lat, lng) {
       this.onClickList([lat, lng]);
-    },
-  },
+    }
+  }
 };
 </script>
 

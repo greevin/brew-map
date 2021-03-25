@@ -1,16 +1,16 @@
 import './scss/main.scss';
 
-import Vue from 'vue'
-import App from './App.vue'
-import router from '@/router'
-import store from '@/store/store'
-import '@/plugins/bootstrap-vue'
-import '@/plugins/vue-googlemaps'
+import Vue from 'vue';
+import App from './App.vue';
+import router from '@/router';
+import store from '@/store/store';
+import '@/plugins/bootstrap-vue';
+import '@/plugins/vue-googlemaps';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(App),
   router,
   store
-}).$mount('#app')
+}).$mount('#app');

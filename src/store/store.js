@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from "axios"
+import Vue from 'vue';
+import Vuex from 'vuex';
+import axios from 'axios';
 
-import alarmsv2 from './modules/alarmsv2'
+import alarmsv2 from './modules/alarmsv2';
 
-const path = "https://api.openbrewerydb.org/breweries?per_page=50"
+const path = 'officesv2.json';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -26,9 +26,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getAllBreweries({commit}) {
-      axios.get(path).then((res) => {
-        commit("setBreweries", res.data)
+    getAllBreweries({ commit }) {
+      axios.get(path).then(res => {
+        commit('setBreweries', res.data);
       });
     }
   },
@@ -38,22 +38,22 @@ export default new Vuex.Store({
       if (!state.brews.length) {
         return {
           lat: parseFloat(state.lat),
-          lng: parseFloat(state.lng),
+          lng: parseFloat(state.lng)
         };
       }
       return {
         lat: parseFloat(state.lat),
-        lng: parseFloat(state.lng),
+        lng: parseFloat(state.lng)
       };
     },
-    updateMaps: (state) => {
+    updateMaps: state => {
       return {
         lat: parseFloat(state.lat),
         lng: parseFloat(state.lng)
-      }
-    },
+      };
+    }
   },
   modules: {
     alarmsv2
   }
-})
+});
